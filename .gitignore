@@ -1,1 +1,6 @@
-venv
+venv*
+
+db.sqlite3
+
+tutorials/db.*
+july16/db.*

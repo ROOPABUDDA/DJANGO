@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers
-from  .src.test1 import views
+from src.test1 import views as test1views
+from src.employee import views as employeeviews
+#from src.snippets import views as snippetsviews
 
 
 router = routers.SimpleRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'users', test1views.UserViewSet)
+router.register(r'groups', test1views.GroupViewSet)
+router.register(r'employee', employeeviews.EmployeeViewSet)
+router.register(r'manager', employeeviews.ManagerViewSet)
+
 
 urlpatterns = [
     url(r'^', include(router.urls)),
